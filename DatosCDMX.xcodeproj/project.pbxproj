@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		6FA0F2B521EFB47200368F3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA0F2B421EFB47200368F3A /* AppDelegate.swift */; };
-		6FA0F2B721EFB47200368F3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA0F2B621EFB47200368F3A /* ViewController.swift */; };
-		6FA0F2BA21EFB47200368F3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FA0F2B821EFB47200368F3A /* Main.storyboard */; };
 		6FA0F2BC21EFB47400368F3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FA0F2BB21EFB47400368F3A /* Assets.xcassets */; };
 		6FA0F2BF21EFB47400368F3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FA0F2BD21EFB47400368F3A /* LaunchScreen.storyboard */; };
 		6FA0F2CA21EFB47500368F3A /* DatosCDMXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA0F2C921EFB47500368F3A /* DatosCDMXTests.swift */; };
 		6FA0F2D521EFB47500368F3A /* DatosCDMXUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA0F2D421EFB47500368F3A /* DatosCDMXUITests.swift */; };
+		6FA0F2E721EFC3B400368F3A /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FA0F2E521EFC3B400368F3A /* HomeViewController.xib */; };
+		6FA0F2E821EFC3B400368F3A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA0F2E621EFC3B400368F3A /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +36,6 @@
 /* Begin PBXFileReference section */
 		6FA0F2B121EFB47200368F3A /* DatosCDMX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatosCDMX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FA0F2B421EFB47200368F3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6FA0F2B621EFB47200368F3A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6FA0F2B921EFB47200368F3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6FA0F2BB21EFB47400368F3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6FA0F2BE21EFB47400368F3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6FA0F2C021EFB47400368F3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +45,8 @@
 		6FA0F2D021EFB47500368F3A /* DatosCDMXUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DatosCDMXUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FA0F2D421EFB47500368F3A /* DatosCDMXUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatosCDMXUITests.swift; sourceTree = "<group>"; };
 		6FA0F2D621EFB47500368F3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FA0F2E521EFC3B400368F3A /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		6FA0F2E621EFC3B400368F3A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,8 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				6FA0F2E321EFB5B500368F3A /* Launch */,
-				6FA0F2B621EFB47200368F3A /* ViewController.swift */,
-				6FA0F2B821EFB47200368F3A /* Main.storyboard */,
+				6FA0F2E421EFC39300368F3A /* Home */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -139,6 +138,15 @@
 				6FA0F2BD21EFB47400368F3A /* LaunchScreen.storyboard */,
 			);
 			path = Launch;
+			sourceTree = "<group>";
+		};
+		6FA0F2E421EFC39300368F3A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				6FA0F2E521EFC3B400368F3A /* HomeViewController.xib */,
+				6FA0F2E621EFC3B400368F3A /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,7 +255,7 @@
 			files = (
 				6FA0F2BF21EFB47400368F3A /* LaunchScreen.storyboard in Resources */,
 				6FA0F2BC21EFB47400368F3A /* Assets.xcassets in Resources */,
-				6FA0F2BA21EFB47200368F3A /* Main.storyboard in Resources */,
+				6FA0F2E721EFC3B400368F3A /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,8 +280,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FA0F2B721EFB47200368F3A /* ViewController.swift in Sources */,
 				6FA0F2B521EFB47200368F3A /* AppDelegate.swift in Sources */,
+				6FA0F2E821EFC3B400368F3A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,14 +317,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		6FA0F2B821EFB47200368F3A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6FA0F2B921EFB47200368F3A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6FA0F2BD21EFB47400368F3A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -449,7 +449,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G9KYNT8JLN;
 				INFOPLIST_FILE = DatosCDMX/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -466,7 +468,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G9KYNT8JLN;
 				INFOPLIST_FILE = DatosCDMX/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
