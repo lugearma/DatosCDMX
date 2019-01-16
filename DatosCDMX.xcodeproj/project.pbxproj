@@ -98,10 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				6FA0F2B421EFB47200368F3A /* AppDelegate.swift */,
-				6FA0F2B621EFB47200368F3A /* ViewController.swift */,
-				6FA0F2B821EFB47200368F3A /* Main.storyboard */,
+				6FA0F2E221EFB57C00368F3A /* UI */,
 				6FA0F2BB21EFB47400368F3A /* Assets.xcassets */,
-				6FA0F2BD21EFB47400368F3A /* LaunchScreen.storyboard */,
 				6FA0F2C021EFB47400368F3A /* Info.plist */,
 			);
 			path = DatosCDMX;
@@ -123,6 +121,24 @@
 				6FA0F2D621EFB47500368F3A /* Info.plist */,
 			);
 			path = DatosCDMXUITests;
+			sourceTree = "<group>";
+		};
+		6FA0F2E221EFB57C00368F3A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				6FA0F2E321EFB5B500368F3A /* Launch */,
+				6FA0F2B621EFB47200368F3A /* ViewController.swift */,
+				6FA0F2B821EFB47200368F3A /* Main.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		6FA0F2E321EFB5B500368F3A /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				6FA0F2BD21EFB47400368F3A /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
