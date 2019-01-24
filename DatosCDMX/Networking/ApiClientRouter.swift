@@ -33,21 +33,11 @@ extension ApiClientRouter {
     let baseURL = URL(string: baseURLAsString)
     let urlAppendedPath = baseURL?.appendingPathComponent(result.path)
     var components = URLComponents(url: urlAppendedPath!, resolvingAgainstBaseURL: true)
-    components?.queryItems = buildQueryItemsFrom(parameters: result.parameters)
+    components?.queryItems = result.parameters.map { URLQueryItem(name: $0, value: String(describing: $1))}
     guard let url = components?.url else {
       preconditionFailure("Cannot get URL")
     }
     let urlRequest = URLRequest(url: url)
     return urlRequest
-  }
-  
-  private func buildQueryItemsFrom(parameters: [String: Any]) -> [URLQueryItem] {
-    var queryItems: [URLQueryItem] = []
-    for parameter in parameters {
-      let queryItem = URLQueryItem(name: parameter.key, value: String(describing: parameter.value))
-      queryItems.append(queryItem)
-    }
-    
-    return queryItems
   }
 }
