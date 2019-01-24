@@ -38,6 +38,7 @@ extension ApiClientProtocol {
 final class APIClient: ApiClientProtocol {
   
   func getCategories(_ completion: @escaping (Result<Category>) -> Void) {
-    defaultRequest(ApiClientRouter.categories(parameters: ["rows": 0, "facet": "theme", "timezone": "America Mexico_City"]), completion)
+    let parameters: [String: Any] = ["rows": 0, "facet": "theme", "timezone": "America/Mexico_City"]
+    defaultRequest(ApiClientRouter.categories(parameters: parameters), completion)
   }
 }

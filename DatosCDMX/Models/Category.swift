@@ -19,16 +19,3 @@ struct Category: Codable {
     case facetGroup = "facet_groups"
   }
 }
-
-struct FacetGroup: Codable {
-  let name: String?
-  let facets: [Facet]?
-}
-
-#warning("Change String to enum")
-struct Facet: Codable {
-  let name: String?
-  let path: String?
-  let count: Int?
-  let state: String?
-}

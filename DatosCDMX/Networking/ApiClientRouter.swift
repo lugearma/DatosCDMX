@@ -25,6 +25,7 @@ extension ApiClientRouter {
     let result: (path: String, parameters: [String: Any]) = {
       switch self {
       case .categories(let parameters):
+        #warning("Check way to remove hard coded string")
         return ("/api/datasets/1.0/search/", parameters)
       }
     }()
@@ -32,17 +33,21 @@ extension ApiClientRouter {
     let baseURL = URL(string: baseURLAsString)
     let urlAppendedPath = baseURL?.appendingPathComponent(result.path)
     var components = URLComponents(url: urlAppendedPath!, resolvingAgainstBaseURL: true)
-    #warning("Remove hard coded")
-    let queryItems = [
-      URLQueryItem(name: "rows", value: "0"),
-      URLQueryItem(name: "facet", value: "theme"),
-      URLQueryItem(name: "timezone", value: "America/Mexico_City")]
-    
-    components?.queryItems = queryItems
+    components?.queryItems = buildQueryItemsFrom(parameters: result.parameters)
     guard let url = components?.url else {
       preconditionFailure("Cannot get URL")
     }
     let urlRequest = URLRequest(url: url)
     return urlRequest
+  }
+  
+  private func buildQueryItemsFrom(parameters: [String: Any]) -> [URLQueryItem] {
+    var queryItems: [URLQueryItem] = []
+    for parameter in parameters {
+      let queryItem = URLQueryItem(name: parameter.key, value: String(describing: parameter.value))
+      queryItems.append(queryItem)
+    }
+    
+    return queryItems
   }
 }
