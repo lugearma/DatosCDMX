@@ -16,9 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     window = UIWindow(frame: UIScreen.main.bounds)
+    let tabBarController = UITabBarController()
+    
     let homeViewModel = HomeViewModel()
     let homeViewController = HomeViewController(viewModel: homeViewModel)
-    window?.rootViewController = homeViewController
+    homeViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
+    
+    let popularViewController = PopularViewController()
+    popularViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 1)
+    
+    tabBarController.viewControllers = [homeViewController, popularViewController]
+    
+    window?.rootViewController = tabBarController
+//    window?.rootViewController = homeViewController
     window?.makeKeyAndVisible()
     return true
   }

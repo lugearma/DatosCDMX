@@ -29,7 +29,21 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: HomeViewModelDelegate {
+  func didThrowError(error: Error) {
+    print("‼️ -> ", error)
+  }
+  
   func didReceiveCategories(_ categories: Category) {
     print(categories)
+  }
+}
+
+extension HomeViewController: AlertPresentable {
+  var alertComponents: AlertComponents {
+    let action = AlertActionComponent(title: "Ok", handler: {_ in print("My task :)")})
+    let alertComponents = AlertComponents(title: "Alert", message: "Not a simple one, is a POP one.", actions: [action], completion: {
+      print("Just presented")
+    })
+    return alertComponents
   }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol CategoriesViewModelDelegate: class {
+protocol CategoriesViewModelDelegate: class, ErrorThrowable {
   func didReceiveCategories(_ categories: [Facet])
 }
 
@@ -18,9 +18,15 @@ final class CategoriesViewModel {
   weak var delegate: CategoriesViewModelDelegate?
   
   func requestCategories() {
-    homeService.allCategories { categories in
-      let facets = categories.facetGroup.first?.facets ?? []
-      self.delegate?.didReceiveCategories(facets)
+    homeService.allCategories { result in
+      switch result {
+      case .failure(let error):
+        self.delegate?.didThrowError(error: error)
+      case .success(let categories):
+        let facets = categories.facetGroup.first?.facets ?? []
+        self.delegate?.didReceiveCategories(facets)
+      }
+      
     }
   }
 }

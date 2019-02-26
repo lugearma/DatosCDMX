@@ -8,8 +8,13 @@
 
 import Foundation
 
-protocol HomeViewModelDelegate: class {
+protocol ErrorThrowable {
+  func didThrowError(error: Error)
+}
+
+protocol HomeViewModelDelegate: class, ErrorThrowable {
   func didReceiveCategories(_ categories: Category)
+  func didThrowError(error: Error)
 }
 
 final class HomeViewModel {
@@ -18,8 +23,14 @@ final class HomeViewModel {
   weak var delegate: HomeViewModelDelegate?
   
   func requestCategories() {
-    homeService.allCategories { category in
-      self.delegate?.didReceiveCategories(category)
+    homeService.allCategories { result in
+      switch result {
+      case .failure(let error):
+        self.delegate?.didThrowError(error: error)
+      case .success(let category):
+        self.delegate?.didReceiveCategories(category)
+      }
+      
     }
   }
 }

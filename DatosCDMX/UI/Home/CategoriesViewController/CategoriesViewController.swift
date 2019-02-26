@@ -56,6 +56,10 @@ extension CategoriesViewController {
 // MARK: CategoriesViewModelDelegate
 
 extension CategoriesViewController: CategoriesViewModelDelegate {
+  func didThrowError(error: Error) {
+    print("‼️ -> ", error)
+  }
+  
   func didReceiveCategories(_ categories: [Facet]) {
     self.categories = categories
     collectionView.reloadData()

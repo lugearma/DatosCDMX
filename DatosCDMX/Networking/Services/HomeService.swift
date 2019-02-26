@@ -9,7 +9,7 @@
 import Foundation
 
 protocol HomeServiceProtocol: class {
-  func allCategories(_ completion: @escaping (Category) -> Void)
+  func allCategories(_ completion: @escaping (Result<Category>) -> Void)
   func lastModifications(_ completion: @escaping (Any) -> Void)
   func mostPopular(_ completion: @escaping (Any) -> Void)
 }
@@ -18,15 +18,8 @@ final class HomeService: HomeServiceProtocol {
   
   let api = APIClient()
   
-  func allCategories(_ completion: @escaping (Category) -> Void) {
-    api.getCategories { result in
-      switch result {
-      case .failure(let error):
-        fatalError(error.localizedDescription)
-      case .success(let value):
-        completion(value)
-      }
-    }
+  func allCategories(_ completion: @escaping (Result<Category>) -> Void) {
+    api.getCategories(completion)
   }
 
   func lastModifications(_ completion: @escaping (Any) -> Void) {
