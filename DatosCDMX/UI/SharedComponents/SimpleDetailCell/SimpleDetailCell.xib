@@ -36,17 +36,18 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5Fv-i3-Oub">
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5Fv-i3-Oub">
                                         <rect key="frame" x="0.0" y="22" width="266.5" height="21.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D6z-Lu-9WJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="22" height="21.5"/>
+                                                <rect key="frame" x="0.0" y="3" width="15" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="D6z-Lu-9WJ" secondAttribute="height" multiplier="1:1" id="gRj-Ub-ivf"/>
+                                                    <constraint firstAttribute="height" constant="15" id="wkx-n8-w0O"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVZ-3N-3w9">
-                                                <rect key="frame" x="32" y="0.0" width="234.5" height="21.5"/>
+                                                <rect key="frame" x="25" y="1.5" width="241.5" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>

@@ -16,19 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     window = UIWindow(frame: UIScreen.main.bounds)
-    let tabBarController = UITabBarController()
     
-    let homeViewModel = HomeViewModel()
-    let homeViewController = HomeViewController(viewModel: homeViewModel)
-    homeViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
-    
-    let popularViewController = PopularViewController()
-    popularViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 1)
-    
-    tabBarController.viewControllers = [homeViewController, popularViewController]
-    
-    window?.rootViewController = tabBarController
-//    window?.rootViewController = homeViewController
+    let menuController = MenuViewController()
+    let menuViewModel = MenuViewModel()
+    menuController.viewModel = menuViewModel
+    let navigationController = UINavigationController(rootViewController: menuController)
+
+    window?.rootViewController = navigationController
     window?.makeKeyAndVisible()
     return true
   }

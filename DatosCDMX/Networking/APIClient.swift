@@ -17,7 +17,7 @@ protocol ApiClientProtocol {
 }
 
 extension ApiClientProtocol {
-  func defaultRequest<T: Codable>(_ urlRequest: ApiClientRouter, _ completion: @escaping (Result<T>) -> Void) {
+  func defaultRequest<T: Decodable>(_ urlRequest: ApiClientRouter, _ completion: @escaping (Result<T>) -> Void) {
     guard let request = try? urlRequest.asURLRequest() else {
       completion(Result { throw ApiClientError.unknown })
       return

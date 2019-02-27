@@ -8,14 +8,16 @@
 
 import Foundation
 
-struct Category: Codable {
+struct Category: Decodable {
   let hints: Int
   let parameters: Parameter
-  let facetGroup: [FacetGroup]
+  let facetGroup: [FacetGroup]?
+  let datasets: [Dataset]
   
   enum CodingKeys: String, CodingKey {
     case hints = "nhits"
     case parameters
     case facetGroup = "facet_groups"
+    case datasets
   }
 }

@@ -8,6 +8,19 @@
 
 import UIKit
 
+enum CategoryImage {
+  case calendar
+}
+
+extension CategoryImage {
+  var detailImage: UIImage {
+    switch self {
+    case .calendar:
+      return UIImage(named: "calendar")!
+    }
+  }
+}
+
 final class SimpleDetailCell: UITableViewCell {
   
   @IBOutlet var categoryImageView: UIImageView!
@@ -19,7 +32,9 @@ final class SimpleDetailCell: UITableViewCell {
     super.awakeFromNib()
   }
   
-  func setupCellContent(_  detail: String) {
-    detailLabel.text = detail
+  func setupCellContent(meta: Metas, category: CategoryImage) {
+    descriptionLabel.text = meta.title
+    detailLabel.text = meta.publisher
+    detailImageView.image = category.detailImage
   }
 }
