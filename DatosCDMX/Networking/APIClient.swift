@@ -14,6 +14,7 @@ enum ApiClientError: LocalizedError {
 
 protocol ApiClientProtocol {
   func getCategories(_ completion: @escaping (Result<Category>) -> Void)
+  func getCategory(_ completion: @escaping (Result<Category>) -> Void)
 }
 
 extension ApiClientProtocol {
@@ -39,6 +40,11 @@ final class APIClient: ApiClientProtocol {
   
   func getCategories(_ completion: @escaping (Result<Category>) -> Void) {
     let parameters: [String: Any] = ["rows": 0, "facet": "theme", "timezone": "America/Mexico_City"]
+    defaultRequest(ApiClientRouter.categories(parameters: parameters), completion)
+  }
+  
+  func getCategory(_ completion: @escaping (Result<Category>) -> Void) {
+    let parameters: [String: Any] = ["rows": 0, "refine.theme": "Justicia+y+seguridad", "timezone": "America/Mexico_City", "sort": "modified"]
     defaultRequest(ApiClientRouter.categories(parameters: parameters), completion)
   }
 }

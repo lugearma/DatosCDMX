@@ -39,6 +39,16 @@
 		6FFF226E2226F51B00390A22 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFF226A2226F51B00390A22 /* MenuCell.swift */; };
 		6FFF22702226FAFD00390A22 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFF226F2226FAFD00390A22 /* MenuViewModel.swift */; };
 		6FFF22712226FAFD00390A22 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFF226F2226FAFD00390A22 /* MenuViewModel.swift */; };
+		6FFF2275222718C000390A22 /* ItemsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FFF2273222718C000390A22 /* ItemsListViewController.xib */; };
+		6FFF2276222718C000390A22 /* ItemsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FFF2273222718C000390A22 /* ItemsListViewController.xib */; };
+		6FFF2277222718C000390A22 /* ItemsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFF2274222718C000390A22 /* ItemsListViewController.swift */; };
+		6FFF2278222718C000390A22 /* ItemsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFF2274222718C000390A22 /* ItemsListViewController.swift */; };
+		6FFF227C2227196C00390A22 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FFF227A2227196C00390A22 /* ItemCell.xib */; };
+		6FFF227D2227196C00390A22 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FFF227A2227196C00390A22 /* ItemCell.xib */; };
+		6FFF227E2227196C00390A22 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFF227B2227196C00390A22 /* ItemCell.swift */; };
+		6FFF227F2227196C00390A22 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFF227B2227196C00390A22 /* ItemCell.swift */; };
+		6FFF22812227274B00390A22 /* ItemsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFF22802227274B00390A22 /* ItemsListViewModel.swift */; };
+		6FFF22822227274B00390A22 /* ItemsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFF22802227274B00390A22 /* ItemsListViewModel.swift */; };
 		922211652224C8DF00D96881 /* SimpleDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922211632224C8DF00D96881 /* SimpleDetailCell.swift */; };
 		922211662224C8DF00D96881 /* SimpleDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922211632224C8DF00D96881 /* SimpleDetailCell.swift */; };
 		922211672224C8DF00D96881 /* SimpleDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922211642224C8DF00D96881 /* SimpleDetailCell.xib */; };
@@ -89,6 +99,11 @@
 		6FFF22692226F51B00390A22 /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		6FFF226A2226F51B00390A22 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		6FFF226F2226FAFD00390A22 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		6FFF2273222718C000390A22 /* ItemsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemsListViewController.xib; sourceTree = "<group>"; };
+		6FFF2274222718C000390A22 /* ItemsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsListViewController.swift; sourceTree = "<group>"; };
+		6FFF227A2227196C00390A22 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
+		6FFF227B2227196C00390A22 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		6FFF22802227274B00390A22 /* ItemsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsListViewModel.swift; sourceTree = "<group>"; };
 		922211632224C8DF00D96881 /* SimpleDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleDetailCell.swift; sourceTree = "<group>"; };
 		922211642224C8DF00D96881 /* SimpleDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleDetailCell.xib; sourceTree = "<group>"; };
 		9242499622088CB500A17352 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
@@ -244,6 +259,26 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		6FFF22722227187B00390A22 /* ItemsList */ = {
+			isa = PBXGroup;
+			children = (
+				6FFF22792227194500390A22 /* Cell */,
+				6FFF2273222718C000390A22 /* ItemsListViewController.xib */,
+				6FFF2274222718C000390A22 /* ItemsListViewController.swift */,
+				6FFF22802227274B00390A22 /* ItemsListViewModel.swift */,
+			);
+			path = ItemsList;
+			sourceTree = "<group>";
+		};
+		6FFF22792227194500390A22 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6FFF227A2227196C00390A22 /* ItemCell.xib */,
+				6FFF227B2227196C00390A22 /* ItemCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		9222115A2224C56200D96881 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +302,7 @@
 		9242499522088C9C00A17352 /* SharedComponents */ = {
 			isa = PBXGroup;
 			children = (
+				6FFF22722227187B00390A22 /* ItemsList */,
 				922211622224C8A700D96881 /* SimpleDetailCell */,
 				9242499622088CB500A17352 /* Alertable.swift */,
 			);
@@ -380,6 +416,8 @@
 				6FA0F2BF21EFB47400368F3A /* LaunchScreen.storyboard in Resources */,
 				6FA0F2BC21EFB47400368F3A /* Assets.xcassets in Resources */,
 				6FFF226B2226F51B00390A22 /* MenuCell.xib in Resources */,
+				6FFF2275222718C000390A22 /* ItemsListViewController.xib in Resources */,
+				6FFF227C2227196C00390A22 /* ItemCell.xib in Resources */,
 				922211672224C8DF00D96881 /* SimpleDetailCell.xib in Resources */,
 				6FFF22642226F4BA00390A22 /* MenuViewController.xib in Resources */,
 			);
@@ -389,6 +427,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FFF227D2227196C00390A22 /* ItemCell.xib in Resources */,
+				6FFF2276222718C000390A22 /* ItemsListViewController.xib in Resources */,
 				6FFF226C2226F51B00390A22 /* MenuCell.xib in Resources */,
 				6FFF22652226F4BA00390A22 /* MenuViewController.xib in Resources */,
 			);
@@ -411,11 +451,14 @@
 			files = (
 				6FA0F2B521EFB47200368F3A /* AppDelegate.swift in Sources */,
 				6FFF22702226FAFD00390A22 /* MenuViewModel.swift in Sources */,
+				6FFF2277222718C000390A22 /* ItemsListViewController.swift in Sources */,
 				6FA0F31721FA22D400368F3A /* ApiClientRouter.swift in Sources */,
 				6FFF225422259F5600390A22 /* Dataset.swift in Sources */,
+				6FFF22812227274B00390A22 /* ItemsListViewModel.swift in Sources */,
 				6FA0F32321FA3C8F00368F3A /* Facet.swift in Sources */,
 				6FA0F2F521F8C8B300368F3A /* Result.swift in Sources */,
 				6FA0F31521FA1BDF00368F3A /* Parameter.swift in Sources */,
+				6FFF227E2227196C00390A22 /* ItemCell.swift in Sources */,
 				9242499722088CB500A17352 /* Alertable.swift in Sources */,
 				6FFF22662226F4BA00390A22 /* MenuViewController.swift in Sources */,
 				6FA0F2F321F8C71200368F3A /* HomeService.swift in Sources */,
@@ -435,6 +478,7 @@
 				6FFF226E2226F51B00390A22 /* MenuCell.swift in Sources */,
 				6FA0F2CA21EFB47500368F3A /* DatosCDMXTests.swift in Sources */,
 				6FA0F32021FA37E100368F3A /* Parameter.swift in Sources */,
+				6FFF2278222718C000390A22 /* ItemsListViewController.swift in Sources */,
 				6FFF22672226F4BA00390A22 /* MenuViewController.swift in Sources */,
 				6FA0F31821FA355200368F3A /* APIClient.swift in Sources */,
 				6FA0F31A21FA355800368F3A /* Result.swift in Sources */,
@@ -442,7 +486,9 @@
 				6FA0F31921FA355500368F3A /* ApiClientRouter.swift in Sources */,
 				6FFF22712226FAFD00390A22 /* MenuViewModel.swift in Sources */,
 				6FA0F31F21FA37DE00368F3A /* Category.swift in Sources */,
+				6FFF22822227274B00390A22 /* ItemsListViewModel.swift in Sources */,
 				6FA0F32221FA3C8A00368F3A /* Facet.swift in Sources */,
+				6FFF227F2227196C00390A22 /* ItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

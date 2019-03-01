@@ -13,26 +13,9 @@ struct Dataset: Decodable {
   let metas: Metas?
 }
 
-struct Metas {
+struct Metas: Decodable {
   let publisher: String?
   let description: String?
   let title: String?
-  let theme: String
-  
-  enum CodingKeys: String, CodingKey {
-    case publisher
-    case description
-    case title
-    case theme
-  }
-}
-
-extension Metas: Decodable {
-  init(from decoder: Decoder) throws {
-    let values = try decoder.container(keyedBy: CodingKeys.self)
-    publisher = try values.decode(String.self, forKey: .publisher)
-    description = try values.decode(String.self, forKey: .description)
-    title = try values.decode(String.self, forKey: .title)
-    theme = try values.decode(String.self, forKey: .theme)
-  }
+  let keyword: [String]?
 }

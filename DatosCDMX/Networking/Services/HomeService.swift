@@ -10,6 +10,7 @@ import Foundation
 
 protocol MenuServiceProtocol: class {
   func allCategories(_ completion: @escaping (Result<Category>) -> Void)
+  func getCategory(_ completion: @escaping (Result<Category>) -> Void)
 }
 
 final class MenuService: MenuServiceProtocol {
@@ -18,5 +19,9 @@ final class MenuService: MenuServiceProtocol {
   
   func allCategories(_ completion: @escaping (Result<Category>) -> Void) {
     api.getCategories(completion)
+  }
+  
+  func getCategory(_ completion: @escaping (Result<Category>) -> Void) {
+    api.getCategory(completion)
   }
 }

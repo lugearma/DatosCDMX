@@ -73,6 +73,17 @@ extension MenuViewController: UICollectionViewDataSource {
   }
 }
 
+// MARK: - UICollectionViewDelegate
+
+extension MenuViewController: UICollectionViewDelegate {
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let itemListViewController = ItemsListViewController()
+    let itemListViewModel = ItemsListViewModel()
+    itemListViewController.viewModel = itemListViewModel
+    navigationController?.pushViewController(itemListViewController, animated: true)
+  }
+}
+
 // MARK: - UICollectionViewDelegateFlowLayout
 
 extension MenuViewController: UICollectionViewDelegateFlowLayout {
