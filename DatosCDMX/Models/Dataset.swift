@@ -14,8 +14,29 @@ struct Dataset: Decodable {
 }
 
 struct Metas: Decodable {
-  let publisher: String?
-  let description: String?
-  let title: String?
-  let keyword: [String]?
+//  let publisher: String?
+//  let description: String?
+//  let title: String?
+  let theme: Any?
+//  let keyword: [String]?
+  
+  init(from decoder: Decoder) throws {
+    let map = try? decoder.container(keyedBy: CodingKeys.self)
+    theme = try map?.decode(.theme)
+  }
+  
+  private enum CodingKeys: CodingKey {
+    case theme
+  }
+}
+
+
+
+extension KeyedDecodingContainer {
+  public func decode(_ key: Key) throws -> Any {
+    if let string = try? self.decode(String.self, forKey: key) {
+      return string
+    }
+    return try self.decode(Array<String>.self, forKey: key)
+  }
 }

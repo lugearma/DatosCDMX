@@ -10,23 +10,29 @@ import Foundation
 
 protocol ItemsListViewModelDelegate: class {
   func didThrowError(_ error: Error)
-  func didReceiveCategory()
+  func didReceiveItems(_ items: [Dataset])
 }
 
 class ItemsListViewModel {
   
   weak var delegate: ItemsListViewModelDelegate?
-  var menuService = MenuService()
+  private let menuService: MenuServiceProtocol
+  
+  init(menuService: MenuServiceProtocol) {
+    self.menuService = menuService
+  }
   
   func getCategory() {
-    menuService.getCategory { result in
-      switch result {
-      case .failure(let error):
-        self.delegate?.didThrowError(error)
-      case .success(let value):
-        print("🥵🥵🥵🥵: ", value.datasets.first?.metas?.title)
-        self.delegate?.didReceiveCategory()
+    menuService.getCategory { [weak self] result in
+      DispatchQueue.main.async {
+        switch result {
+        case .failure(let error):
+          self?.delegate?.didThrowError(error)
+        case .success(let value):
+          self?.delegate?.didReceiveItems(value.datasets)
+        }
       }
+      
     }
   }
 }

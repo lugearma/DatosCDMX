@@ -2,4 +2,70 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DatosCDMX/Networking/ApiClient.temp_caseinsensitive_rename.swift"
+            timestampString = "573418594.543681"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "defaultRequest(_:_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in DatosCDMX):DatosCDMX.ApiClientProtocol.defaultRequest&lt;A where A1: Swift.Decodable&gt;(DatosCDMX.ApiClientRouter, (DatosCDMX.Result&lt;A1&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "DatosCDMX"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luisarias/Documents/Development/PersonalProjects/iOS/DatosCDMX/DatosCDMX/Networking/ApiClient.temp_caseinsensitive_rename.swift"
+                  timestampString = "573412615.242496"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "386">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in (extension in DatosCDMX):DatosCDMX.ApiClientProtocol.defaultRequest&lt;A where A1: Swift.Decodable&gt;(DatosCDMX.ApiClientRouter, (DatosCDMX.Result&lt;A1&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "DatosCDMX"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luisarias/Documents/Development/PersonalProjects/iOS/DatosCDMX/DatosCDMX/Networking/ApiClient.temp_caseinsensitive_rename.swift"
+                  timestampString = "573412615.244799"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "328">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DatosCDMX/UI/SharedComponents/ItemsList/Cell/ItemCell.swift"
+            timestampString = "573423790.823789"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "setupCell(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

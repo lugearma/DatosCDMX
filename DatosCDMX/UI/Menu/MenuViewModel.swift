@@ -17,7 +17,11 @@ protocol MenuViewModelDelegate: class {
 class MenuViewModel {
   
   weak var delegate: MenuViewModelDelegate?
-  var menuService = MenuService()
+  let menuService: MenuServiceProtocol
+  
+  init(menuService: MenuServiceProtocol) {
+    self.menuService = menuService
+  }
   
   func getCategories() {
     menuService.allCategories { result in

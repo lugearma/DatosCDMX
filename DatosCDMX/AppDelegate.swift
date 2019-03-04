@@ -18,7 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window = UIWindow(frame: UIScreen.main.bounds)
     
     let menuController = MenuViewController()
-    let menuViewModel = MenuViewModel()
+    let apiClient = ApiClient()
+    let menuService = MenuService(api: apiClient)
+    let menuViewModel = MenuViewModel(menuService: menuService)
     menuController.viewModel = menuViewModel
     let navigationController = UINavigationController(rootViewController: menuController)
 

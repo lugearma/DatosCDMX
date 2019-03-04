@@ -11,7 +11,7 @@ import UIKit
 final class ItemsListViewController: UIViewController {
   
   @IBOutlet var itemsTableView: UITableView!
-  var items: [Category] = []
+  var items: [Dataset] = []
   var viewModel: ItemsListViewModel? {
     didSet {
       viewModel?.delegate = self
@@ -29,31 +29,23 @@ final class ItemsListViewController: UIViewController {
     itemsTableView.register(nib, forCellReuseIdentifier: ItemCell.identifier)
     itemsTableView.delegate = self
     itemsTableView.dataSource = self
-    itemsTableView.estimatedRowHeight = 100
-    itemsTableView.rowHeight = UITableView.automaticDimension
+    itemsTableView.estimatedRowHeight = 200
   }
 }
 
-//MARK: - UITableViewDataSource
+// MARK: - UITableViewDataSource
 
 extension ItemsListViewController: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 5
+    return items.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: ItemCell.identifier, for: indexPath) as! ItemCell
-    if indexPath.row % 2 == 0 {
-      cell.setupCell(
-        """
-      Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna
-      """
-      )
-    }
-
+    let item = items[indexPath.row]
+    cell.setupCell(item)
     
-//    let item = items[indexPath.row]
     return cell
   }
 }
@@ -63,15 +55,7 @@ extension ItemsListViewController: UITableViewDataSource {
 extension ItemsListViewController: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    let cell = tableView.cellForRow(at: indexPath)
-    
-//    let descriptionTextView = cell?.descriptionTextView
-//    let sizeThatFitsTextView = descriptionTextView?.sizeThatFits((descriptionTextView?.bounds.size)!)
-//    let heightOfText = sizeThatFitsTextView!.height
-//    print("🥶🥶🥶", heightOfText)
-//    return heightOfText
-    
-    return 250
+    return UITableView.automaticDimension
   }
 }
 
@@ -83,7 +67,8 @@ extension ItemsListViewController: ItemsListViewModelDelegate {
     print(error.localizedDescription)
   }
   
-  func didReceiveCategory() {
-  
+  func didReceiveItems(_ items: [Dataset]) {
+    self.items = items
+    itemsTableView.reloadData()
   }
 }

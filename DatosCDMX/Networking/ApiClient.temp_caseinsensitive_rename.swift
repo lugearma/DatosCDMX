@@ -36,7 +36,7 @@ extension ApiClientProtocol {
   }
 }
 
-final class APIClient: ApiClientProtocol {
+final class ApiClient: ApiClientProtocol {
   
   func getCategories(_ completion: @escaping (Result<Category>) -> Void) {
     let parameters: [String: Any] = ["rows": 0, "facet": "theme", "timezone": "America/Mexico_City"]
@@ -44,7 +44,13 @@ final class APIClient: ApiClientProtocol {
   }
   
   func getCategory(_ completion: @escaping (Result<Category>) -> Void) {
-    let parameters: [String: Any] = ["rows": 0, "refine.theme": "Justicia+y+seguridad", "timezone": "America/Mexico_City", "sort": "modified"]
+    // refine.theme=Justicia+y+seguridad&sort=modified&rows=10&start=0&extrametas=false&interopmetas=true&timezone=America%2FMexico_City
+    let parameters: [String: Any] = [
+      "rows": 10,
+      "refine.theme": "Justicia+y+seguridad",
+      "timezone": "America/Mexico_City",
+      "sort": "modified",
+      "start=": "0"]
     defaultRequest(ApiClientRouter.categories(parameters: parameters), completion)
   }
 }

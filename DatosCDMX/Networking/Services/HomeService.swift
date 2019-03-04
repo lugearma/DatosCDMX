@@ -15,7 +15,11 @@ protocol MenuServiceProtocol: class {
 
 final class MenuService: MenuServiceProtocol {
   
-  let api = APIClient()
+  let api: ApiClientProtocol
+  
+  init(api: ApiClientProtocol) {
+    self.api = api
+  }
   
   func allCategories(_ completion: @escaping (Result<Category>) -> Void) {
     api.getCategories(completion)
