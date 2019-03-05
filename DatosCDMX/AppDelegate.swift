@@ -17,15 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     window = UIWindow(frame: UIScreen.main.bounds)
     
-    let menuController = MenuViewController()
-    let apiClient = ApiClient()
-    let menuService = MenuService(api: apiClient)
-    let menuViewModel = MenuViewModel(menuService: menuService)
-    menuController.viewModel = menuViewModel
-    let navigationController = UINavigationController(rootViewController: menuController)
-    
-    window?.rootViewController = navigationController
-    window?.makeKeyAndVisible()
+    let navigator = Navigator(navigationBase: .navigationCotroller, window: window)
+    navigator.navigateTo(destination: .menu)
+  
     return true
   }
   

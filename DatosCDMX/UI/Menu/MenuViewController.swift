@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+// TODO: Remove this structure from here
 struct MenuItem {
   let description: String
   let index: Int
@@ -83,10 +85,8 @@ extension MenuViewController: UICollectionViewDataSource {
 extension MenuViewController: UICollectionViewDelegate {
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    let itemListViewController = ItemsListViewController()
-    let menuService = MenuService(api: ApiClient())
-    let itemListViewModel = ItemsListViewModel(menuService: menuService)
-    itemListViewController.viewModel = itemListViewModel
+    let cell = collectionView.cellForItem(at: indexPath) as? MenuCell
+    let itemListViewController = ViewControllerFactory.makeItemsListViewController()
     navigationController?.pushViewController(itemListViewController, animated: true)
   }
 }
