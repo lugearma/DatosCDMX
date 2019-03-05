@@ -43,9 +43,14 @@ final class MenuViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    title = "Category"
     setupCollectionView()
+    setupNavigationBar()
     viewModel?.getCategories()
+  }
+  
+  private func setupNavigationBar() {
+    title = "Categories"
+    navigationController?.navigationBar.prefersLargeTitles = true
   }
   
   private func setupCollectionView() {

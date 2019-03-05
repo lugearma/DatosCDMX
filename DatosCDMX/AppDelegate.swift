@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let menuViewModel = MenuViewModel(menuService: menuService)
     menuController.viewModel = menuViewModel
     let navigationController = UINavigationController(rootViewController: menuController)
-
+    
     window?.rootViewController = navigationController
     window?.makeKeyAndVisible()
     return true

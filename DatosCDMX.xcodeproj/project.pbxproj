@@ -154,12 +154,12 @@
 		6FA0F2B321EFB47200368F3A /* DatosCDMX */ = {
 			isa = PBXGroup;
 			children = (
-				9222AFE8222E09050032AEF5 /* Extensions */,
 				6FA0F2B421EFB47200368F3A /* AppDelegate.swift */,
 				6FA0F2E221EFB57C00368F3A /* UI */,
 				6FA0F2E921F8BA5100368F3A /* Networking */,
 				6FA0F31121FA1B4900368F3A /* Models */,
 				6FA0F2EE21F8C20400368F3A /* Supporting */,
+				9222AFE8222E09050032AEF5 /* Extensions */,
 				6FA0F2BB21EFB47400368F3A /* Assets.xcassets */,
 			);
 			path = DatosCDMX;
@@ -643,7 +643,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/DatosCDMX/Supporting/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -662,7 +662,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/DatosCDMX/Supporting/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
