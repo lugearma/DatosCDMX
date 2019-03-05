@@ -10,6 +10,7 @@ import UIKit
 
 struct MenuItem {
   let description: String
+  let index: Int
   var image: UIImage? {
     var imageName = "placeholder"
     switch index {
@@ -27,7 +28,6 @@ struct MenuItem {
     }
     return UIImage(named: imageName)
   }
-  let index: Int
 }
 
 final class MenuViewController: UIViewController {

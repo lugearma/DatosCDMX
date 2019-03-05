@@ -25,7 +25,7 @@ final class ItemsListViewController: UIViewController {
   }
   
   private func setupTableView() {
-    let nib = UINib(nibName: "ItemCell", bundle: nil)
+    let nib = UINib(nibName: ItemCell.identifier, bundle: nil)
     itemsTableView.register(nib, forCellReuseIdentifier: ItemCell.identifier)
     itemsTableView.delegate = self
     itemsTableView.dataSource = self

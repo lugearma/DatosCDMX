@@ -27,8 +27,10 @@ final class ItemCell: UITableViewCell {
   
   func setupCell(_ data: Dataset) {
     let info = data.metas
-//    titleLabel.text = info?.title
-//    descriptionTextView.text = info?.description
-//    publisherLabel.text = info?.publisher
+    titleLabel.text = info?.title
+    descriptionTextView.text = info?.description?.cleanTags()
+    publisherLabel.text = info?.publisher
+    let image = UIImage(named: info?.imageName ?? "placeholder")
+    categoryImageView.image = image
   }
 }
