@@ -17,13 +17,14 @@ class ItemsListViewModel {
   
   weak var delegate: ItemsListViewModelDelegate?
   private let menuService: MenuServiceProtocol
+  var selectedItem: String?
   
   init(menuService: MenuServiceProtocol) {
     self.menuService = menuService
   }
   
   func getCategory() {
-    menuService.getCategory { [weak self] result in
+    menuService.getCategory(by: selectedItem ?? "") { [weak self] result in
       DispatchQueue.main.async {
         switch result {
         case .failure(let error):

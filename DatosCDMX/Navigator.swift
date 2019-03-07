@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol Navegable where Self: UIViewController {
+  var navigator: Navigator? { get set }
+}
+
 class Navigator {
   
   enum NavigationBase {
@@ -16,7 +20,7 @@ class Navigator {
   }
   
   enum Destination {
-    case itemsList
+    case itemsList(selection: String)
     case menu
   }
   
@@ -42,10 +46,15 @@ class Navigator {
     let destinationController: UIViewController
     
     switch destination {
-    case .itemsList:
-      destinationController = ViewControllerFactory.makeItemsListViewController()
+    case .itemsList(let selection):
+      destinationController = ViewControllerFactory.makeItemsListViewController(selection)
+      
     case .menu:
       destinationController = ViewControllerFactory.makeMenuViewController()
+    }
+    
+    if var controller = destinationController as? Navegable {
+      controller.navigator = self
     }
     
     if let navigationController = mainViewController as? UINavigationController {

@@ -18,7 +18,7 @@ struct Metas: Decodable {
   let description: String?
   let title: String?
   let theme: Any?
-  let keyword: [String]?
+  let keyword: Any?
   
   init(from decoder: Decoder) throws {
     let map = try decoder.container(keyedBy: CodingKeys.self)
@@ -26,7 +26,7 @@ struct Metas: Decodable {
     description = try map.decode(.description)
     title = try map.decode(.title)
     theme = try map.customeDecode(.theme)
-    keyword = try map.decode(.keyword)
+    keyword = try map.customeDecode(.keyword)
   }
   
   private enum CodingKeys: CodingKey {

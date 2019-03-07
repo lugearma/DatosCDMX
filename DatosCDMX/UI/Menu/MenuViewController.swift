@@ -32,11 +32,12 @@ struct MenuItem {
   }
 }
 
-final class MenuViewController: UIViewController {
+final class MenuViewController: UIViewController, Navegable {
   
   @IBOutlet var menuCollectionView: UICollectionView!
   
   var menuItems: [MenuItem] = []
+  var navigator: Navigator?
   var viewModel: MenuViewModel? {
     didSet {
       viewModel?.delegate = self
@@ -86,7 +87,8 @@ extension MenuViewController: UICollectionViewDelegate {
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     let cell = collectionView.cellForItem(at: indexPath) as? MenuCell
-    let itemListViewController = ViewControllerFactory.makeItemsListViewController()
+    let selectedField = cell?.descriptionLabel.text ?? ""
+    let itemListViewController = ViewControllerFactory.makeItemsListViewController(selectedField)
     navigationController?.pushViewController(itemListViewController, animated: true)
   }
 }

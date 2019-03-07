@@ -8,10 +8,12 @@
 
 import UIKit
 
-final class ItemsListViewController: UIViewController {
+final class ItemsListViewController: UIViewController, Navegable {
   
   @IBOutlet var itemsTableView: UITableView!
   var items: [Dataset] = []
+  var navigator: Navigator?
+  
   var viewModel: ItemsListViewModel? {
     didSet {
       viewModel?.delegate = self

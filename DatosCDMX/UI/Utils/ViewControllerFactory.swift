@@ -10,10 +10,11 @@ import UIKit
 
 class ViewControllerFactory {
   
-  static func makeItemsListViewController() -> UIViewController {
+  static func makeItemsListViewController(_ selection: String) -> UIViewController {
     let itemListViewController = ItemsListViewController()
     let menuService = MenuService(api: ApiClient())
     let itemListViewModel = ItemsListViewModel(menuService: menuService)
+    itemListViewModel.selectedItem = selection
     itemListViewController.viewModel = itemListViewModel
     return itemListViewController
   }
