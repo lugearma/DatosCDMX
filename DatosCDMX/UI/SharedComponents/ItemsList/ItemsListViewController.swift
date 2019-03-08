@@ -24,6 +24,7 @@ final class ItemsListViewController: UIViewController, Navegable {
     super.viewDidLoad()
     setupTableView()
     viewModel?.getCategory()
+    title = viewModel?.selectedItem ?? ""
   }
   
   private func setupTableView() {

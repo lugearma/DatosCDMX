@@ -15,6 +15,7 @@ final class ItemCell: UITableViewCell {
   @IBOutlet weak var descriptionTextView: UITextView!
   @IBOutlet weak var publisherLabel: UILabel!
   @IBOutlet weak var backView: UIView!
+  @IBOutlet weak var clasificationStackView: UIStackView!
   
   static let identifier = "ItemCell"
   
@@ -32,5 +33,32 @@ final class ItemCell: UITableViewCell {
     publisherLabel.text = info?.publisher
     let image = UIImage(named: info?.imageName ?? "placeholder")
     categoryImageView.image = image
+    appendKeywordToStackView(data)
+  }
+  
+  private func appendKeywordToStackView(_ data: Dataset) {
+    if let keywords = data.metas?.keyword as? Array<String> {
+      for keyword in keywords {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 10)
+        label.backgroundColor = .lightGray
+        label.text = "  " + keyword + "  "
+        label.textColor = .white
+        label.roundCorners()
+        clasificationStackView.addArrangedSubview(label)
+      }
+    } else if let keyword = data.metas?.keyword as? String {
+      let label = UILabel()
+      label.text = keyword
+      label.roundCorners()
+      clasificationStackView.addArrangedSubview(label)
+    }
+  }
+}
+
+extension UIView {
+  func roundCorners() {
+    layer.cornerRadius = 3.0
+    layer.masksToBounds = true
   }
 }
