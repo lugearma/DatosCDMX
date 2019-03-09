@@ -17,13 +17,17 @@ final class ItemCell: UITableViewCell {
   @IBOutlet weak var backView: UIView!
   @IBOutlet weak var clasificationStackView: UIStackView!
   
+  var data: Dataset?
+  
   static let identifier = "ItemCell"
   
   override func awakeFromNib() {
     super.awakeFromNib()
-    backView.layer.cornerRadius = 3
+    backView.roundCorners()
     backView.layer.borderColor = UIColor.lightGray.cgColor
     backView.layer.borderWidth = 0.5
+    
+    selectionStyle = .none
   }
   
   func setupCell(_ data: Dataset) {
@@ -36,22 +40,46 @@ final class ItemCell: UITableViewCell {
     appendKeywordToStackView(data)
   }
   
-  private func appendKeywordToStackView(_ data: Dataset) {
-    if let keywords = data.metas?.keyword as? Array<String> {
-      for keyword in keywords {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 10)
-        label.backgroundColor = .lightGray
-        label.text = "  " + keyword + "  "
-        label.textColor = .white
-        label.roundCorners()
-        clasificationStackView.addArrangedSubview(label)
-      }
+  private func getCategoryKeyword(_ data: Dataset) -> [String] {
+    if let keywords = data.metas?.keyword as? [String] {
+      return keywords
     } else if let keyword = data.metas?.keyword as? String {
+      return [keyword]
+    }
+    
+    return []
+  }
+  
+  private func appendKeywordToStackView(_ data: Dataset) {
+    cleanPresentedLabels()
+    let keywords = getCategoryKeyword(data)
+    let labels = buildCategoryLabels(keywords)
+  
+    labels.forEach { label in
+      self.clasificationStackView.addArrangedSubview(label)
+    }
+  }
+  
+  private func buildCategoryLabels(_ keywords: [String]) -> [UILabel]{
+    var categoryLabels: [UILabel] = []
+    for keyword in keywords {
       let label = UILabel()
-      label.text = keyword
+      label.font = UIFont.boldSystemFont(ofSize: 10)
+      label.backgroundColor = .lightGray
+      label.text = "  " + keyword + "  "
+      label.textColor = .white
       label.roundCorners()
-      clasificationStackView.addArrangedSubview(label)
+      categoryLabels.append(label)
+    }
+    
+    return categoryLabels
+  }
+  
+  private func cleanPresentedLabels() {
+    let categoryLabels = clasificationStackView.arrangedSubviews
+    for label in categoryLabels {
+      clasificationStackView.removeArrangedSubview(label)
+      label.removeFromSuperview()
     }
   }
 }
